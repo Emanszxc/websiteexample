@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arduino Control</title>
+</head>
+<body>
+  <h1>Control Arduino from Web</h1>
+  <button onclick="controlLED('ON')">Turn LED ON</button>
+  <button onclick="controlLED('OFF')">Turn LED OFF</button>
+
+  <script>
+    function controlLED(state) {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "http://192.168.1.177/LED=" + state, true);
+      xhr.send();
+    }
+  </script>
+</body>
+</html>
